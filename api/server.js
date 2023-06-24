@@ -4,13 +4,19 @@ const connectDb = require('./config/db')
 const app =express()
 const authRouter = require('./routes/auth')
 const placeRouter = require('./routes/places')
+const userRouter = require('./routes/user')
+const roomRouter = require('./routes/rooms')
+const cookieParser = require('cookie-parser')
 
 dotenv.config()
 connectDb()
 
+app.use(cookieParser())
 app.use(express.json())
 app.use('/api/auth',authRouter)
 app.use('/api/place',placeRouter)
+app.use('/api/user',userRouter)
+app.use('/api/rooms',roomRouter)
 
 app.use((err,req,res,next)=>{
     const errStatus = err.status || 500;
