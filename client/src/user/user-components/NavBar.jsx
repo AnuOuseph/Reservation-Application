@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 import { useState } from 'react';
+import {Link} from 'react-dom'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faUser} from '@fortawesome/free-regular-svg-icons'
 import { faRoute,faBars } from '@fortawesome/free-solid-svg-icons'
@@ -20,10 +21,11 @@ function NavBar() {
         <FontAwesomeIcon icon={faUser}/>
         </div>
         {isOpen && (
-        <div className=" my-2 absolute bg-white shadow-md shadow-gray-200 text-md rounded-md shadow-lg">
-            <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Login</a>
-            <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Signup</a>
-        </div>
+          <div className=" my-2 absolute bg-white shadow-md shadow-gray-200 text-md rounded-md shadow-lg">
+          
+              <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Login</a>
+              <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-gray-100">Signup</a>
+          </div>
         )}
         </div>
       </div>

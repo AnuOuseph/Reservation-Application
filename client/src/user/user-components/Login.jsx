@@ -7,7 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 function Login() {
     const [reg,setReg] = useState(false)
   return (
-    <div className='grid grid-cols-2 h-auto px-40'>
+    <div className='grid grid-cols-2 h-auto  px-40'>
         <div className='bg-white flex justify-end items-center'>
             <div className='w-58 bg-white'>
                 <p className='text-xl'>Super charge your planning powers.</p>
@@ -26,8 +26,19 @@ function Login() {
                 </div>
             </div>
         </div>
-        <div className='bg-white flex justify-start items-center'>
-            <img className='w-4/5' src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-4468581-3783954.png" alt="" />
+        <div className='bg-white justify-start items-center bg-cover'>
+            <div className='flex justify-center'>
+                <img className='w-72 h-56 rounded-3xl transform translate-y-[40px] translate-x-[10px]' src="/img4.jpg" alt="" />
+            </div>
+            <div className='flex justify-center'>
+                <div>
+                    <img className='w-72 rounded-3xl transform translate-y-[-10px] translate-x-[-10px]' src="/img3.jpg" alt="" />
+                </div>
+                <div>
+                    <img className='w-56 h-72 rounded-3xl' src="/img1.jpeg" alt="" />
+                </div>
+            </div>
+            {/* <img className='w-4/5' src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-4468581-3783954.png" alt="" /> */}
         </div>
     </div>
   )

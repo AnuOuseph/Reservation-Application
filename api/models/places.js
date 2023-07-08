@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-
 const hotelSchema = mongoose.Schema(
     {
         name:{
@@ -8,11 +7,13 @@ const hotelSchema = mongoose.Schema(
         },
         images:{
             type:String,
-           
         },
-        days:{
-            type:Number,
+        city:{
+            type:String,
             required:true,
+        },
+        type:{
+            type:String,
         },
         amount:{
             type:Number,
@@ -39,3 +40,6 @@ const hotelSchema = mongoose.Schema(
 const Hotel = mongoose.model('Hotel',hotelSchema)
 
 module.exports= Hotel;
+
+
+

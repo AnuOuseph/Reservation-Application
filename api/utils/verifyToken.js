@@ -1,18 +1,7 @@
 const jwt = require('jsonwebtoken')
 const {createError} = require('../utils/error')
 
-// module.exports = {
-//     verifyToken: function(req,res,next) {
-//         const token = req.cookies.access_token;
-//             if(!token) return next(createError(401,'you are not authenticated!'))
-        
-//             jwt.verify(token,process.env.JWT_SECRET,(err,user)=>{
-//                 if(err) return next(createError(403,'Token is invalid'))
-//                 req.user = user;
-//                 next()
-//             })
-//     }
-// }
+
 
 const verifyToken = (req,res,next)=>{
     const token = req.cookies.access_token;
@@ -38,10 +27,10 @@ const verifyUser = (req,res,next)=>{
 
 }
 
-const verifyAdmin = (req,res,next)=>{
+const verifyAdmin = (req, res, next)=>{
     verifyToken(req,res,next,()=>{
         console.log("hbscg",req.user.id)
-        console.log(req.params.id)
+        console.log("hy",req.params.id)
         if(req.user.isAdmin){
             next()
         }else{
