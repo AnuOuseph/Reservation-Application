@@ -15,17 +15,17 @@ function Properties() {
     console.log(data.data);
   return (
    <>
-    <div className='pl-40 pr-40 py-6 text-center'>
+    <div className='md:pl-40 md:pr-40 py-6 text-center'>
         <p className='text-4xl font-semibold p-4'>Browse by Properties</p>
         <p className='text-md'>Keep calm & travel on</p>
     </div>
-    <div className='bg-white px-40 py-6'>
+    <div className='bg-white md:pl-40 md:pr-40 py-6'>
         
             {loading? <p>loading...</p>:(
-            <div className='grid grid-cols-5'>
+            <div className='md:grid md:grid-cols-5'>
             {obj && obj.map((item,i)=>(
             <div className='' key={i}>
-                <div className='px-4 py-1'>
+                <div className='px-4 py-1 flex justify-center'>
                     <img className='rounded-3xl h-28 w-52' src={image[i]} alt="" />
                 </div>
                 <div className='bg-white px-6 flex justify-center'>

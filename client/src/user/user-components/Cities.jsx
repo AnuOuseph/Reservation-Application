@@ -19,8 +19,8 @@ function Cities() {
             <p className='text-md'>Keep calm & travel on</p>
         </div>
         {loading? <p>Loading....</p>:(
-        <div className='pl-40 pr-40 py-6 bg-white'>
-            <div className='grid grid-cols-3'>
+        <div className='md:pl-40 md:pr-40 px-20 py-6 bg-white'>
+            <div className='md:grid md:grid-cols-3'>
 
                 {count && image && city.map((item,i,img)=>(
                     <div className='bg-white' key={i}>

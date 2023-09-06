@@ -43,8 +43,13 @@ const placeUpdate = asyncHandler(async(req,res)=>{
  })
  //get all
  const placeGetAll = asyncHandler(async(req,res,next)=>{
+    const {min, max, ...others } = req.query;
     try{
-       const Places = await Hotel.find(req.query).limit(4)
+        const Places = await Hotel.find({
+            ...others,
+            amount:{$gt: min || 1, $lt: max || 10000},
+        }).limit(req.query.limit)
+    //    const Places = await Hotel.find(req.query).limit(4)
         res.status(200).json(Places)
     }catch(err){
         next(err)

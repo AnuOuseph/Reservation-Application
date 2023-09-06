@@ -10,7 +10,7 @@ import { faRoute,faBars } from '@fortawesome/free-solid-svg-icons'
 function NavBar() {
     const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="px-40 py-4 flex justify-between">
+    <div className="md:px-40 px-4 py-4 flex justify-between w-full bg-white top-0 fixed ">
       <h1 className='text-2xl'><span className='mx-2 text-blue-500'><FontAwesomeIcon icon={faRoute}/></span><b>Booking.</b></h1>
       <div >
         <div>
