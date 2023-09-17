@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
+import React, { useState } from 'react'
 import useFetch from '../../hooks/useFetch'
 
 function Cities() {
@@ -11,6 +11,7 @@ function Cities() {
         "/city3.jpg",
         "/city4.jpg"
     ]
+    const [hover,setHover] =useState(false)
     return (
     <>
         <div className='pl-40 pr-40 py-6 text-center'>
@@ -24,14 +25,14 @@ function Cities() {
 
                 {count && image && city.map((item,i,img)=>(
                     <div className='bg-white' key={i}>
-                    <div className='m-4 bg-cover rounded-3xl flex justify-center items-center' 
+                    <div className='m-4 bg-cover rounded-3xl flex justify-center items-center cursor-pointer' 
                         style={{backgroundImage:
                                 `url(${image[i]})`,
                                 height:"240px"
                             }}>
-                        <div className='bg-white px-8 py-2 opacity-70 text-center'>
-                            <p className='text-xl font-semibold'>{item}</p>
-                            <p className='text-sm font-bold'>{count[i]}</p>
+                        <div className='hover:opacity-100 hover:bg-black hover:bg-opacity-60 w-full h-full rounded-3xl flex-col flex justify-center items-center'>
+                            <p className='text-xl font-semibold text-white'>{item}</p>
+                            <p className='text-sm font-bold text-white'>{count[i]}</p>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faStar,faChartSimple } from '@fortawesome/free-solid-svg-icons'
 import useFetch from '../../hooks/useFetch'
 import Filter from './Filter'
+import {useNavigate} from "react-router-dom"
 
 function HotelsList() {
   const {data,loading,error} = useFetch("http://localhost:5000/api/place?featured=true")
@@ -12,6 +13,10 @@ function HotelsList() {
     const [menu,setMenu] = useState(false)
     const handleMenu = ()=>{
       setMenu(!menu)
+    }
+    const navigate = useNavigate()
+    const HandleView = () =>{
+      navigate('/hotel/2')
     }
   return (
     <div className='w-[80%] mx-auto my-4 bg-white h-screen mt-20'>
@@ -27,15 +32,15 @@ function HotelsList() {
       <div className='grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1'>
         {hotels && hotels.map((item)=>(
         <>
-        <div className='bg-white mx-2 h-96'key={item._id} >
+        <div className='bg-white mx-2 h-96 cursor-pointer' onClick={HandleView} key={item._id} >
             <div><img className='h-64 w-64 mx-auto my-2 rounded-xl' src="/img1.jpeg" alt="" /></div>
-            <div className='px-0'>
+            <div className='px-2 mx-2'>
                 <div className='flex justify-between'>
-                  <p className='font-medium'>{item.city}</p>
+                  <p className='font-medium'>{item.name}, {item.city}</p>
                   <p className='text-xs font-medium'><span className='text-xs text-yellow-500 px-1'><FontAwesomeIcon icon={faStar} /></span>4.83</p>
                 </div>
                 <p className='text-gray-600 text-sm'>{item.desc}</p>
-                <p className='font-medium'>₹{item.amount}</p>
+                <p className='font-medium'>₹{item.amount} <span className='text-gray-700 font-light'>night</span></p>
             </div>
         </div>
         </>
