@@ -4,11 +4,11 @@ import React from 'react'
 function Footer() {
   return (
     <div className='bg-gray-300 flex h-auto items-center justify-center py-4'>
-        <p className='px-4 text-sm'>© 2023 Booking, Inc.</p>
-        <p className='px-4 text-sm'>Privacy</p>
-        <p className='px-4 text-sm'>Terms</p>
-        <p className='px-4 text-sm'>Details</p>
-        <p className='px-4 text-sm'>Destinations</p>
+        <p className='md:px-4 text-xs'>© 2023 Booking, Inc.</p>
+        <p className='md:px-4 text-xs'>Privacy</p>
+        <p className='md:px-4 text-xs'>Terms</p>
+        <p className='md:px-4 text-xs'>Details</p>
+        <p className='md:px-4 text-xs'>Destinations</p>
       
     </div>
   )

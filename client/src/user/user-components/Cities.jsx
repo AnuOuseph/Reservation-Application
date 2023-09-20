@@ -14,13 +14,13 @@ function Cities() {
     const [hover,setHover] =useState(false)
     return (
     <>
-        <div className='pl-40 pr-40 py-6 text-center'>
+        <div className='md:pl-40 md:pr-40 py-6 text-center'>
             <p className='text-4xl font-semibold p-2'>Live Anywhere</p>
             {/* <hr className='w-12 mx-auto h-1 bg-black'/> */}
             <p className='text-md'>Keep calm & travel on</p>
         </div>
         {loading? <p>Loading....</p>:(
-        <div className='md:pl-40 md:pr-40 px-20 py-6 bg-white'>
+        <div className='md:pl-40 md:pr-40 px-10 py-6 bg-white'>
             <div className='md:grid md:grid-cols-3'>
 
                 {count && image && city.map((item,i,img)=>(

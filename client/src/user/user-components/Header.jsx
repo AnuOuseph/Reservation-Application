@@ -8,7 +8,7 @@ function Header() {
     <>
     <div className="flex justify-center h-4/5">
         <div
-          className="bg-cover h-4/5 w-4/5 rounded-3xl mt-10"
+          className="bg-cover h-4/5 md:w-4/5 w-full rounded-3xl mt-10"
           style={{
             backgroundImage:
               "url('https://cdn.pixabay.com/photo/2017/06/11/18/03/big-ben-2393098_1280.jpg')",
@@ -21,22 +21,22 @@ function Header() {
            </div>
         </div>
       </div>
-      <div className='bg-white rounded-2xl shadow-xl shadow-gray-200 p-10 w-97 md:mx-60 mx-10 h-30 transform translate-y-[-80px] md:flex md:justify-around'>
+      <div className='bg-white rounded-2xl shadow-xl shadow-gray-200 p-10 w-97 md:mx-60 md:mx-10 h-30 transform translate-y-[-80px] flex flex-wrap justify-around'>
         <div>
             <p className='mx-4'><b>Where</b></p>
             <input className='m-2 py-2 px-6 rounded-xl w-44 border border-gray-400' type="text" placeholder='Search Destinations.' />
         </div>
         <div>
-        <p className='mx-4'><b>Check In</b></p>
-        <input className='m-2 py-2 px-6 rounded-xl w-44 border border-gray-400' type="date" />
+        <p className='mx-4 hidden md:block'><b>Check In</b></p>
+        <input className='m-2 py-2 px-6 hidden md:block rounded-xl w-44 border border-gray-400' type="date" />
         </div>
         <div>
-        <p className='mx-4'><b>Check Out</b></p>
-        <input className='m-2 py-2 px-6 rounded-xl w-44 border border-gray-400' type="date" />
+        <p className='mx-4 hidden md:block'><b>Check Out</b></p>
+        <input className='m-2 py-2 px-6 hidden md:block rounded-xl w-44 border border-gray-400' type="date" />
         </div>
         <div>
-        <p className='mx-4'><b>Travellers</b></p>
-        <input className='m-2 py-2 px-4 rounded-xl w-44 border border-gray-400' type="text" placeholder='No of users..' />
+        <p className='mx-4 hidden md:block'><b>Travellers</b></p>
+        <input className='m-2 py-2 px-4 hidden md:block rounded-xl w-44 border border-gray-400' type="text" placeholder='No of users..' />
         </div>
         <div className='flex items-center'>
         <button className='px-4 py-2 mt-6 rounded-full bg-blue-500 text-white '>
