@@ -22,6 +22,9 @@ const hotelSchema = mongoose.Schema(
         rooms:{
             type:[String],
         },
+        headline:{
+            type:String,
+        },
         desc:{
             type:String,
             required:true,
