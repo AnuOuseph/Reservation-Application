@@ -15,8 +15,8 @@ function HotelsList() {
       setMenu(!menu)
     }
     const navigate = useNavigate()
-    const HandleView = () =>{
-      navigate('/hotel/2')
+    const HandleView = (id) =>{
+      navigate(`/hotel/${id}`)
     }
   return (
     <div className='w-[80%] mx-auto my-4 bg-white h-screen mt-20'>
@@ -32,8 +32,8 @@ function HotelsList() {
       <div className='grid md:grid-cols-3 lg:grid-cols-4 grid-cols-1'>
         {hotels && hotels.map((item)=>(
         <>
-        <div className='bg-white mx-2 h-96 cursor-pointer' onClick={HandleView} key={item._id} >
-            <div><img className='h-64 w-64 mx-auto my-2 rounded-xl' src="/img1.jpeg" alt="" /></div>
+        <div className='bg-white mx-2 h-96 cursor-pointer' onClick={() =>HandleView(item._id)} key={item._id} >
+            <div><img className='h-64 w-64 mx-auto my-2 rounded-xl object-cover' src={item.images[0]} alt="" /></div>
             <div className='px-2 mx-2'>
                 <div className='flex justify-between'>
                   <p className='font-medium'>{item.name}, {item.city}</p>

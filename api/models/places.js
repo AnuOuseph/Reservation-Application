@@ -6,7 +6,7 @@ const hotelSchema = mongoose.Schema(
             required:true,
         },
         images:{
-            type:String,
+            type:[String],
         },
         city:{
             type:String,

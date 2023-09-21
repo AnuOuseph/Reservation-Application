@@ -1,17 +1,34 @@
 const asyncHandler = require('express-async-handler') 
 const Hotel = require('../models/places')
 const { createError } = require('../utils/error')
+const multer = require('multer');
+const cloudinary = require('../utils/cloudinary');
+
+// Configure Multer for image uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
 
 //create
 const placeCreate = asyncHandler(async(req,res)=>{
-    console.log(req.body)
-   const newPlace = new Hotel(req.body)
-   try{
-    const savedPlace = await newPlace.save()
-    res.status(200).json(savedPlace)
-   }catch(err){
-    next(err)
-   }
+    try{
+        var imageUrls = []
+        const { images } = req.body;
+        if (!Array.isArray(images) || images.length === 0) {
+            return res.status(400).json({ error: 'No files provided' });
+        }
+        console.log(images)
+        for(var i=0;i<images.length;i++){
+            var filePath = images[i];
+            const result = await cloudinary.uploader.upload(filePath);
+            imageUrls.push(result.url)
+        }
+        req.body.images = imageUrls;
+        const newPlace = new Hotel(req.body)
+        const savedPlace = await newPlace.save()
+        res.status(201).json({ message: 'Hotel saved', savedPlace });
+    }catch(err){
+        next(err)
+    }
 })
 //update
 const placeUpdate = asyncHandler(async(req,res)=>{
