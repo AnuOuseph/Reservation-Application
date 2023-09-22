@@ -7,8 +7,8 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 function Login() {
     const [reg,setReg] = useState(false)
   return (
-    <div className='grid grid-cols-2 h-auto  px-40'>
-        <div className='bg-white flex justify-end items-center'>
+    <div className='grid grid-cols-2 h-screen  px-40 py-8'>
+        <div className='bg-white flex justify-center items-center'>
             <div className='w-58 bg-white'>
                 <p className='text-xl'>Super charge your planning powers.</p>
                 <p className='text-6xl mt-2 mb-4'>Let the adventure<br></br> begin..</p>
@@ -26,18 +26,8 @@ function Login() {
                 </div>
             </div>
         </div>
-        <div className='bg-white justify-start items-center bg-cover'>
-            <div className='flex justify-center'>
-                <img className='w-72 h-56 rounded-3xl transform translate-y-[40px] translate-x-[10px]' src="/img4.jpg" alt="" />
-            </div>
-            <div className='flex justify-center'>
-                <div>
-                    <img className='w-72 rounded-3xl transform translate-y-[-10px] translate-x-[-10px]' src="/img3.jpg" alt="" />
-                </div>
-                <div>
-                    <img className='w-56 h-72 rounded-3xl' src="/img1.jpeg" alt="" />
-                </div>
-            </div>
+        <div className='bg-cover relative bg-blend-darken rounded-xl' style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1614094082869-cd4e4b2905c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80)' }}>
+            
             {/* <img className='w-4/5' src="https://cdni.iconscout.com/illustration/premium/thumb/login-page-4468581-3783954.png" alt="" /> */}
         </div>
     </div>

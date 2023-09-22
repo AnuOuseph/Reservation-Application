@@ -6,7 +6,6 @@ import NavBar from '../user-components/NavBar'
 function LoginPage() {
   return (
     <div>
-        <NavBar/>
         <Login/>
     </div>
   )

@@ -25,11 +25,11 @@ function SingleView() {
       </div>
       <div className="grid md:grid-cols-2 ">
         <div className="bg-white h-200 p-1">
-          <div className="h-96">
+          <div className="md:h-96 h-60">
             <img className="h-full w-full object-cover rounded-xl" src={hotel?.images[0]} alt="" />
           </div>
         </div>
-        <div className="bg-white grid grid-cols-2 grid-rows-2 flex flex-wrap w-full h-96 md:pt-1 pt-2">
+        <div className="bg-white grid grid-cols-2 grid-rows-2 flex flex-wrap w-full md:h-96 h-60 md:pt-1 pt-2">
           {hotel?.images && hotel.images.slice(1).map((image,index)=>(
             <div key={index} className="p-1">
               <img className="h-full w-full object-cover rounded-xl" src={image} alt="" />

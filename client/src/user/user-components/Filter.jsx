@@ -4,9 +4,9 @@ function Filter(props) {
   return createPortal(
     <>
     <div className="fixed top-0 bottom-0 left-0 right-0 bg-black bg-opacity-40 z-50"></div>
-    <div className='fixed top-1/2 left-1/2 w-[30%] flex flex-col transform -translate-x-1/2 -translate-y-1/2 bg-white z-50 p-6 rounded-lg shadow-md'>
+    <div className='fixed top-1/2 left-1/2 lg:w-[30%] md:w-[50%] w-[90%] flex flex-col transform -translate-x-1/2 -translate-y-1/2 bg-white z-50 p-6 rounded-lg shadow-md'>
         <button className='self-end' onClick={props.menu}>X</button>
-        <div className="bg-white w-[100%] h-auto mx-auto md:my-2 my-10 p-4 rounded-xl">
+        <div className="bg-white w-[100%] h-auto mx-auto md:my-2 my-10 px-4 rounded-xl">
           <div className="flex justify-between py-2 mb-2">
             <p className="text-xl font-medium"> Filter</p>
           </div>
